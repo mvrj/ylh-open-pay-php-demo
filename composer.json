@@ -1,0 +1,5 @@
+{
+    "require": {
+        "mwkj/ylh-open-api-php-client": "^2.3"
+    }
+}
