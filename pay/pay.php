@@ -7,6 +7,8 @@
  */
 require '../vendor/autoload.php';
 
+require_once '../config.php';
+
 use YunLianHui\OAuth2;
 
 $access_token = '00010b63924afaed984e2a5fc25575682cda853b';
@@ -21,27 +23,7 @@ if (!empty($_POST['WIDout_trade_no'])&& trim($_POST['WIDout_trade_no'])!=""){
     //商品描述，必填
     $body = $_POST['WIDbody'];
 
-    $config = [
-        //应用ID
-        'client_id' => 'Client',
-        //应用密钥
-        'client_secret' => 'ClientSecret',
-        //应用回调地址
-        'redirect_uri' => 'https://example.com/callback',
-        //应用私钥，您的原始格式RSA私钥
-        'client_private_key' => "MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBALXQr1Rowgyh+UtXY26RK/FXDEpYNN0S3tUZgctXwqCR6WFnzUPSFfDeWcmheRADT/6griac6rBJjsb8yQmg1dUteqGHym9fRkmb0GgrbIyw1k99UzuPq8Gqw4HTWaykTHf09AwIlmJCRpxmZAeIaCW/3gbFrB/10/wziaV1HF1RAgMBAAECgYBmkER3z2i4C58/+xoiQ06QpFRQlBWuKHj/qZXoiadHQUhwJEhM2/R4nlX0QlyyxcuYjjfvnFFgBP7ADdWy0sIMvhMqEUp8BrQngpAq4njhEajzYGBqPW9a05osFvX7IJl3h1KFHo354Jh5SS5znbZWnkoUfoGDPMrW02DTS8/T6QJBAOMP3XHeFXKmPBExh7EvxUKEZa53GJk/eU6qaQhIpUGVD68bhZPL07t/nuZYmAAycrTvbsT7aFb6alFKGRIXth8CQQDM/Jh8UcXQbWCvsmFTJKSuDaFXLX7dtIgLhGpXsIAP9tJBGGFVUY3w29V6j/AiJHgHCRv68WFdzN92+czAuh6PAkEAyDfMH8UiCne1DcAsE7y451+Rvda8tR04XXp8pVZRilPjgZf2II4iBPqS5jEGz12ssglTFpVNuyyTJVz+YGrSJwJANYKq+6kNDn+/AZ57MY0bQCRmva8uswlxijAi4ok8pO41rLCEmBUWDI4WiEwSz5bdjlieaT+hvy7AFvrWrGjpmQJAb0tiaqAPlJMpGQl6uEx/TSCT2oDsxehyKOCDOnyIUEnY9apDSBvlEXavc7TNHmrp0r3GEkYEW4Ba9nKKEKFhpg==",
-        //同步跳转
-        'return_url' => 'https://example.com/example/return_url.php',
-        //异步通知地址
-        'notify_url' => 'https://example.com/example/notify_url.php',
-        //云联惠API网关
-        'gatewayUrl' => "https://openapi.yunlianhui.com",
-        //云联惠开放平台收银台
-        'gatewayPay' => "https://openpay.yunlianhui.com",
-        //云联惠公钥,查看地址：https://docs.yunlianhui.com/keyManage
-        'alipay_public_key' => "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCRTiNWa8g/MQvbQg9z6Y6L2fe8Pu5ytoEGf1JBbCkr9GYC+tiH8cqLb6GoewYCaXoNzu5TCSZfFTkYOn28pOG4aMHn7WDHPpjAlXG2iYUfwsRnlQ+xci3g3hfrgQAzWj+QYqYxoxvkkfad7NrkWf4PClfqWzkz+TI7N1wyGm326QIDAQAB",
 
-    ];
     $oauth_client = new OAuth2($config['gatewayUrl'],$config['client_id'],$config['client_secret'],$config['client_private_key'],$config['redirect_uri']);
 
     try{
