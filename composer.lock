@@ -189,16 +189,16 @@
         },
         {
             "name": "mwkj/ylh-open-api-php-client",
-            "version": "v2.3",
+            "version": "v2.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mvrj/ylh-open-api-php-client.git",
-                "reference": "914df4e1055ef93af1bfd66c31c459227d952551"
+                "reference": "4eb0e1b22349346e129a8f89284a320b5b40d6db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/mvrj/ylh-open-api-php-client/914df4e1055ef93af1bfd66c31c459227d952551.zip",
-                "reference": "914df4e1055ef93af1bfd66c31c459227d952551",
+                "url": "https://files.phpcomposer.com/files/mvrj/ylh-open-api-php-client/4eb0e1b22349346e129a8f89284a320b5b40d6db.zip",
+                "reference": "4eb0e1b22349346e129a8f89284a320b5b40d6db",
                 "shasum": ""
             },
             "require": {
@@ -213,7 +213,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "ylh-open-api-php-client",
-            "time": "2017-10-22T08:23:33+00:00"
+            "time": "2017-11-08T10:09:39+00:00"
         },
         {
             "name": "psr/http-message",
