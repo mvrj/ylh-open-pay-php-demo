@@ -11,6 +11,9 @@ require_once '../config.php';
 
 use YunLianHui\OAuth2;
 
+//下面这个token需要自己更换
+// 1.先让商户授权 scope=basic_info+pay_points
+// 2. 商户授权成功之后返回的token
 $access_token = '00010b63924afaed984e2a5fc25575682cda853b';
 
 if (!empty($_POST['WIDout_trade_no'])&& trim($_POST['WIDout_trade_no'])!=""){
