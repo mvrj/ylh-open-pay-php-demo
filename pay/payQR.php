@@ -136,53 +136,42 @@
             color: #fff;
         }
     </style>
+    <script src="jquery.min.js"></script>
+    <script src="qrcode.js"></script>
 </head>
 <body text=#000000 bgColor="#ffffff" leftMargin=0 topMargin=4>
 <header class="am-header">
     <h1>云联惠开放平台支付接口</h1>
 </header>
 <div id="main">
-    <div id="body" style="clear:left">
-        <dl class="content">
-            <dt></dt>
-            <dd id="btn-dd">
-                        <span class="new-btn-login-sp">
-                            <button class="new-btn-login" style="text-align:center;" onclick="window.open('./pay/pay.php')">支付(payInit)</button>
-                        </span>
-            </dd>
-            <dt></dt>
-            <dd id="btn-dd">
-                        <span class="new-btn-login-sp">
-                            <button class="new-btn-login" style="text-align:center;" onclick="window.open('./pay/payQRInit.php')">QR支付(payInit)</button>
-                        </span>
-            </dd>
-            <dt></dt>
-            <dd id="btn-dd">
-                        <span class="new-btn-login-sp">
-                            <button class="new-btn-login" style="text-align:center;" onclick="window.open('./pay/query.php')">订单查询</button>
-                        </span>
-            </dd>
-            <dt></dt>
-            <dd id="btn-dd">
-                        <span class="new-btn-login-sp">
-                            <button class="new-btn-login" style="text-align:center;" onclick="window.open('./pay/refund.php')">订单退款</button>
-                        </span>
-            </dd>
-            <dt></dt>
-            <dd id="btn-dd">
-                        <span class="new-btn-login-sp">
-                            <button class="new-btn-login" style="text-align:center;" onclick="window.open('./pay/refundquery.php')">订单退款查询</button>
-                        </span>
-            </dd>
-            <dt></dt>
-            <dd id="btn-dd">
-                        <span class="new-btn-login-sp">
-                            <button class="new-btn-login" style="text-align:center;" onclick="window.open('./pay/datadownioad.php')">账单下载</button>
-                        </span>
-            </dd>
-        </dl>
-    </div>
+    <div id="qrcode" style="
+    /* text-align: center; */
+    width: 256px;
+    /* height: 1px; */
+    margin: 0 auto;
+    margin-top: 10px;
+"></div>
 
 </div>
+
+
+
 </body>
+<script language="javascript">
+
+    new QRCode(document.getElementById('qrcode'), "yunlianhuiApp://OPENQR."+getQueryVariable("order_token"));
+
+
+    function getQueryVariable(variable)
+    {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i=0;i<vars.length;i++) {
+            var pair = vars[i].split("=");
+            if(pair[0] == variable){return pair[1];}
+        }
+        return(false);
+    }
+
+</script>
 </html>
